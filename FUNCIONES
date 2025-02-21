@@ -1,0 +1,84 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package com.mycompany.ejerciciosjava;
+
+        import java.time.LocalDate;
+        import java.time.format.DateTimeFormatter;
+
+/**
+ *
+ * @author emjuc
+ */
+public class clasesyfunciones {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+
+
+class Clientes {
+    private String cedula;
+    private String nombre;
+    private String apellido;
+    private String telefono;
+    private String correo;
+    private String direccion;
+    private String fechaNacimiento;
+
+    // Constructor
+    public Clientes(String cedula, String nombre, String apellido, String telefono, String correo, String direccion, String fechaNacimiento) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.correo = correo;
+        this.direccion = direccion;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    // Función para obtener los valores de los atributos
+    public String obtenerDatos() {
+        return "Cédula: " + cedula + ", Nombre: " + nombre + ", Apellido: " + apellido + ", Teléfono: " + telefono + ", Correo: " + correo + ", Dirección: " + direccion + ", Fecha de nacimiento: " + fechaNacimiento;
+    }
+
+    // Función para calcular la edad del cliente
+    public int calcularEdad() {
+        // Extraer el año de la fecha de nacimiento
+        int anioNacimiento = Integer.parseInt(fechaNacimiento.substring(0, 4));
+
+        // Obtener el año actual
+        int anioActual = LocalDate.now().getYear();
+
+        // Calcular la edad
+        return anioActual - anioNacimiento;
+    }
+
+    // Función para imprimir el mensaje con los datos
+    public String obtenerMensaje() {
+        int edad = calcularEdad();
+        return "Mi nombre es " + nombre + " " + apellido + " y vivo en " + direccion + " y tengo " + edad + " años de edad.";
+    }
+
+    public static void main(String[] args) {
+        // Instanciamos la clase y pasamos los valores al constructor
+        Clientes cliente = new Clientes(
+            "1234567890", 
+            "Juan", 
+            "Pérez", 
+            "987654321", 
+            "juan.perez@example.com", 
+            "Calle Ficticia 123", 
+            "1990/05/15"
+        );
+
+        // Imprimir el mensaje con los datos
+        System.out.println(cliente.obtenerMensaje());
+    }
+}
+    }
+    
+}
