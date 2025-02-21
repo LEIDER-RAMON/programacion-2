@@ -1,0 +1,48 @@
+
+class Vehículo:
+    def __init__(self, fecha_fabricación, vin_chasis, vin_motor):
+        self.fecha_fabricación = fecha_fabricación
+        self.vin_chasis = vin_chasis
+        self.vin_motor = vin_motor
+        
+    def obtener_fecha_fabricación(self):
+        return self.fecha_fabricación
+
+    def obtener_vin_chasis(self):
+        return self.vin_chasis
+
+    def obtener_vin_motor(self):
+        return self.vin_motor
+
+
+class Automóvil(Vehículo):
+    def __init__(self, fecha_fabricación, vin_chasis, vin_motor, marca, modelo, precio):
+
+        super().__init__(fecha_fabricación, vin_chasis, vin_motor)
+        self.marca = marca
+        self.modelo = modelo
+        self.precio = precio
+
+ 
+    def obtener_marca(self):
+        return self.marca
+
+    def obtener_modelo(self):
+        return self.modelo
+
+    def obtener_precio(self):
+        return self.precio
+
+    def mostrar_datos(self):
+        print(f"Datos del Automóvil:")
+        print(f"Marca: {self.obtener_marca()}")
+        print(f"Modelo: {self.obtener_modelo()}")
+        print(f"Precio: ${self.obtener_precio()}")
+        print(f"Fecha de Fabricación: {self.obtener_fecha_fabricación()}")
+        print(f"VIN Chasis: {self.obtener_vin_chasis()}")
+        print(f"VIN Motor: {self.obtener_vin_motor()}")
+
+auto = Automóvil("2024-05-15", "1HGBH41JXMN109186", "2HGBH41JXMN109187", "Toyota", "Corolla", 22000)
+
+
+auto.mostrar_datos()
